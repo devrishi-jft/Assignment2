@@ -11,6 +11,7 @@ header {
     padding-top: 10px;
     background-color: rgb(8, 80, 104);
     text-align: center;
+    z-index: 1;
 
 }
 p{
@@ -31,9 +32,7 @@ section{
     margin: 80px 2px 80px 2px;
     padding-top: 50px;
     height: 100%;
-   
-    
-    
+    z-index: -1;
 }
 div{
     margin: 10px;
@@ -67,12 +66,12 @@ footer{
 		thead tr {
 			position: absolute;
 			top: -9999px;
-			left: -9999px;
-            
+			left: -9999px;    
 		}
 
     tr {
-      margin: 0 0 1rem 0;
+      margin: 0 0 5rem 0;
+      background-color: rgb(133, 145, 148);
     }
       
     tr:nth-child(odd) {
@@ -82,29 +81,31 @@ footer{
 		td {
 			/* Behave  like a "row" */
 			border: none;
-			border-bottom: 1px solid #eee;
+			border-bottom: 1px solid rgb(238, 238, 238);
 			position: relative;
 			padding-left: 50%;
-          
+
 		}
 
 		td:before {
 			/* Now like a table header */
 			position: absolute;
 			/* Top/left values mimic padding */
-
-            top: 0;
-			left: 6px;
+      top: -4px;
+			left: 2px;
 			width: 45%;
 			padding-right: 10px;
 			white-space: nowrap;
+      font-weight: bold;
 		}
+    
 
 		/*
 		Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
 		*/
-		td:nth-of-type(1):before { content: "ID"; }
-		td:nth-of-type(2):before { content: "NAME"; }
-		td:nth-of-type(3):before { content: "E-MAIL"; }
+		td:nth-of-type(1):before { content: "ID:"; }
+		td:nth-of-type(2):before { content: "NAME:"; }
+		td:nth-of-type(3):before { content: "E-MAIL:"; }
 	}
+  
